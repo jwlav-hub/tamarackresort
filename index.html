@@ -1446,8 +1446,8 @@
     const leaves = [
       ['line', 'Line item', 'left'],
       [dayCol, d3.utcFormat('%b %-d')(asDate(date)) + (view.date ? ' forecast' : ' actual')],
-      [monthCol, view.monthLabel || 'Adj. to Dec 31'],
-      ['season', view.seasonLabel || 'Adj. to Apr 4'],
+      [monthCol, view.monthLabel || 'Adj. forecast'],
+      ['season', view.seasonLabel || 'Adj. forecast'],
     ];
     leaves.forEach(([field, label, cls]) => {
       const th = document.createElement('th');
@@ -1583,7 +1583,7 @@
       table.replaceChildren();
       return;
     }
-    fillPnl(table, 'golf_pnl', { date, month: 'm' + monthOf(date), monthLabel: monthName(date) + ' forecast', seasonLabel: 'To Oct 15' });
+    fillPnl(table, 'golf_pnl', { date, month: 'm' + monthOf(date), monthLabel: monthName(date) + ' forecast', seasonLabel: 'Forecast' });
   });
 
   const chooseGolf = (date) => {
